@@ -14,8 +14,8 @@ int main(int argc, char **argv)
   ros::Publisher led_pub = n.advertise<ros_erle_statusled::statusled>("statusled", 1000);
   ros_erle_statusled::statusled msg;
 
-  msg.blue = false;
-  msg.red = true;
+  msg.blue = atoi(argv[1])==1;
+  msg.red = atoi(argv[2])==1;
   msg.green = true;
 
   ros::Rate loop_rate(10);
