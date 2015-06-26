@@ -23,7 +23,7 @@ cd ros_catkin_ws/src
 git clone https://github.com/ros_erle_statusled
 cd ..
 catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --pkg ros_erle_statusled
-source devel_isolated/setup.bash
+source install_isolated/setup.bash
 ```
 or 
 
