@@ -39,12 +39,12 @@ Then use regular `catkin_make_isolated` for build and install.
 ### Running examples
 C++:
 ```
-rosrun ros_erle_statusled ros_erle_buzzer_writer
+rosrun ros_erle_statusled ros_erle_statusled_writer
 ```
 
 Python:
 ```
-rosrun ros_erle_statusled ros_erle_buzzer_writer.py
+rosrun ros_erle_statusled ros_erle_statusled_writer.py
 ```
 
 Links
