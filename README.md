@@ -22,6 +22,9 @@ Support forums and chats
 Please ask your questions not related to bugs/feauture requests on:
 - [Erle Robotics Forum](http://forum.erlerobotics.com/)
 
+Erle-Brain 1 support
+-----
+Refer to the branch https://github.com/erlerobot/ros_erle_statusled/tree/erle-brain1
 
 Links
 -----
