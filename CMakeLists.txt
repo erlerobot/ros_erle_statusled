@@ -4,33 +4,12 @@ project(ros_erle_statusled)
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp std_msgs genmsg)
 
-## Declare ROS messages and services
-add_message_files(DIRECTORY msg FILES statusled.msg)
-
-## Generate added messages and services
-generate_messages(DEPENDENCIES std_msgs)
-
 ## Declare a catkin package
-catkin_package()
+catkin_package(CATKIN_DEPENDS std_msgs)
 
-include_directories(include ${catkin_INCLUDE_DIRS})
-
-add_executable(ros_erle_statusled_writer examples/ros_erle_statusled_writer.cpp)
-target_link_libraries(ros_erle_statusled_writer ${catkin_LIBRARIES})
-add_dependencies(ros_erle_statusled_writer ros_erle_statusled_generate_messages_cpp)
-
-add_executable(ros_erle_statusled_main src/ros_erle_statusled_main.cpp src/GPIO_BBB.cpp)
-target_link_libraries(ros_erle_statusled_main ${catkin_LIBRARIES})
-add_dependencies(ros_erle_statusled_main ros_erle_statusled_generate_messages_cpp)
-
-file(GLOB SCRIPTS ${PROJECT_SOURCE_DIR}/examples/*)
-  catkin_install_python(PROGRAMS
-  ${SCRIPTS}
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+catkin_install_python(PROGRAMS
+  scripts/statusleds.py
+#  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/scripts
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/scripts
 )
 
-install(
-	TARGETS ros_erle_statusled_main ros_erle_statusled_writer
-	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-	RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
