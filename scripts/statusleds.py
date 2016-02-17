@@ -8,6 +8,10 @@ def callback(data):
 	GPIO.output(24, False)
     elif data.data == "blue":
 	GPIO.output(25, False)
+    elif data.data == "orange_off":
+        GPIO.output(24, True)
+    elif data.data == "blue_off":
+        GPIO.output(25, True)
     else:
     	rospy.loginfo(rospy.get_caller_id() + "Sorry, only 'blue' or 'orange' supported, switching off everything (I heard %s).", data.data)
 	GPIO.output(24, True)
